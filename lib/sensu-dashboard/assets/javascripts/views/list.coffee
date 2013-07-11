@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.List extends SensuDashboard.Views.Base
 
+    __name__: "ListView"
+
     collectionEl: "tbody"
 
     itemName: "list_item"

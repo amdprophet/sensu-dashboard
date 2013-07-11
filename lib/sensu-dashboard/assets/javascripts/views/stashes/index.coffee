@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Stashes", (exports) ->
 
   class exports.Index extends SensuDashboard.Views.Base
 
+    __name__: "StashesIndexView"
+
     name: "stashes/index"
 
     events:

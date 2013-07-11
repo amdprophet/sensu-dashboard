@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.Error extends SensuDashboard.Views.Base
 
+    __name__: "ErrorView"
+
     el: $("#main")
 
     name: "error"

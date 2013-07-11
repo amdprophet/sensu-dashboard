@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Stashes", (exports) ->
 
   class exports.Modal extends SensuDashboard.Views.Modal
 
+    __name__: "StashesModalView"
+
     name: "stashes/modal"
 
     events:

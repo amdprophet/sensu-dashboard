@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.ListItem extends SensuDashboard.Views.Base
 
+    __name__: "ListItemView"
+
     tagName: "tr"
 
     initialize: ->

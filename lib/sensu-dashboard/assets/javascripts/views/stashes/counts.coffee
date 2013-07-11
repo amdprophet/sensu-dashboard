@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Stashes", (exports) ->
 
   class exports.Counts extends SensuDashboard.Views.Base
 
+    __name__: "StashesCountsView"
+
     name: "stashes/counts"
 
     initialize: (collection) ->

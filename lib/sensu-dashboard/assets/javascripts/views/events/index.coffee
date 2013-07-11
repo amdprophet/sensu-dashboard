@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Events", (exports) ->
 
   class exports.Index extends SensuDashboard.Views.Base
 
+    __name__: "EventsIndexView"
+
     name: "events/index"
 
     events:

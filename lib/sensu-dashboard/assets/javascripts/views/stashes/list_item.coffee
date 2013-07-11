@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Stashes", (exports) ->
 
   class exports.ListItem extends SensuDashboard.Views.ListItem
 
+    __name__: "StashesListItemView"
+
     name: "stashes/list_item"
 
     className: ->

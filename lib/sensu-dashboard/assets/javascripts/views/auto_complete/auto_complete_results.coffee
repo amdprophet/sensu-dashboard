@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.AutoCompleteResults extends exports.Base
 
+    __name__: "AutoCompleteResultsView"
+
     tagName: "ul"
     name: "autocomplete/results"
     className: "auto-complete-results"

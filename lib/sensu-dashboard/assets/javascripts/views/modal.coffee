@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.Modal extends SensuDashboard.Views.Base
 
+    __name__: "ModalView"
+
     tagName: "div"
 
     className: "modal hide fade"

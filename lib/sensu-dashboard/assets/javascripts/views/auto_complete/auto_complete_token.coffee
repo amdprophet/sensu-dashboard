@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.AutoCompleteToken extends exports.Base
 
+    __name__: "AutoCompleteTokenView"
+
     tagName: "li"
     className: "token"
 

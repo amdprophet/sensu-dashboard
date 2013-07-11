@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Events", (exports) ->
 
   class exports.Counts extends SensuDashboard.Views.Base
 
+    __name__: "EventsCountsView"
+
     name: "events/counts"
 
     initialize: (model) ->

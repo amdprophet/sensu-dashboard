@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Checks", (exports) ->
 
   class exports.ListItem extends SensuDashboard.Views.ListItem
 
+    __name__: "ChecksListItemView"
+
     name: "checks/list_item"
 
     className: ->

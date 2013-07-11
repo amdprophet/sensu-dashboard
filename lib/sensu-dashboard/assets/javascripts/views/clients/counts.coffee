@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Clients", (exports) ->
 
   class exports.Counts extends SensuDashboard.Views.Base
 
+    __name__: "ClientsCountsView"
+
     name: "clients/counts"
 
     initialize: (collection) ->

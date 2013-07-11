@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Info", (exports) ->
 
   class exports.Index extends SensuDashboard.Views.Base
 
+    __name__: "InfoIndexView"
+
     name: "info/index"
 
     initialize: ->

@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.AutoCompleteField extends TokenField
 
+    __name__: "AutoCompleteFieldView"
+
     name: "auto_complete_field"
     className: "token-field"
     placeholder: ""

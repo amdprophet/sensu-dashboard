@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views", (exports) ->
 
   class exports.Base extends Backbone.View
 
+    __name__: "BaseView"
+
     template: (args) ->
       tmpl = HandlebarsTemplates[@name]
       tmpl(args) if tmpl

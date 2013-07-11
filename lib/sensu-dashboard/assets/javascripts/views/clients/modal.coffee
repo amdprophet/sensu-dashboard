@@ -2,6 +2,8 @@ namespace "SensuDashboard.Views.Clients", (exports) ->
 
   class exports.Modal extends SensuDashboard.Views.Modal
 
+    __name__: "ClientsModalView"
+
     name: "clients/modal"
 
     events:
