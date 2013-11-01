@@ -20,23 +20,28 @@ html(lang='en')
     link(rel="shortcut icon" href="favicon.ico")
     link(rel='stylesheet' type='text/css' href='assets/app.css')
   body
-    .navbar.navbar-inverse
-      .navbar-inner
-        .container
-          a.brand(href='#')
-            img(src='img/logo.png' alt='')
-            span Sensu Dashboard
-          ul.nav.pull-right#navigation
-            li#nav_events
-              a(href='#events') Current Events
-            li#nav_stashes
-              a(href='#stashes') Stashes
-            li#nav_clients
-              a(href='#clients') Clients
-            li#nav_checks
-              a(href='#checks') Checks
-            li#nav_info
-              a(href='#info') Info
+    .navbar.navbar-inverse(role="navigation")
+      .navbar-header
+        button.navbar-toggle(type="button" data-toggle="collapse" data-target="#sd-navbar-collapse")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#')
+          img(src='img/logo.png' alt='')
+          span Sensu Dashboard
+      .collapse.navbar-collapse#sd-navbar-collapse
+        ul.nav.navbar-nav.navbar-right#navigation
+          li#nav_events
+            a(href='#events') Current Events
+          li#nav_stashes
+            a(href='#stashes') Stashes
+          li#nav_clients
+            a(href='#clients') Clients
+          li#nav_checks
+            a(href='#checks') Checks
+          li#nav_info
+            a(href='#info') Info
     .container-fluid#content
       == yield
     footer
