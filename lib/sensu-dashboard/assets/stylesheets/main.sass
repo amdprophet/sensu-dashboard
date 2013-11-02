@@ -219,113 +219,113 @@ table.sensu-table
   border-spacing: 0
   border: 0
 
-  thead
-    tr
-      th
+  > thead
+    > tr
+      > th
         border: 0
 
-  tbody
-    tr
+  > tbody
+    > tr
       cursor: pointer
 
-  td.client
-    white-space: nowrap
+      > td.client
+        white-space: nowrap
 
-  td.check
-    white-space: nowrap
+      > td.check
+        white-space: nowrap
 
-  td
-    border: 0
+      > td
+        border: 0
 
-  tbody:last-child
-    tr:first-child
-      td:first-child
+  > tbody:last-child
+    > tr:first-child
+      > td:first-child
         -moz-border-radius-topleft: 4px
         -khtml-border-topleft-radius: 4px
         -webkit-border-top-left-radius: 4px
         border-top-left-radius: 4px
-      td:last-child
+      > td:last-child
         -moz-border-radius-topright: 4px
         -khtml-border-topright-radius: 4px
         -webkit-border-top-right-radius: 4px
         border-top-right-radius: 4px
 
-    tr:last-child
-      td:first-child
+    > tr:last-child
+      > td:first-child
         -moz-border-radius-bottomleft: 4px
         -khtml-border-bottomleft-radius: 4px
         -webkit-border-bottom-left-radius: 4px
         border-bottom-left-radius: 4px
-      td:last-child
+      > td:last-child
         -moz-border-radius-bottomright: 4px
         -khtml-border-bottomright-radius: 4px
         -webkit-border-bottom-right-radius: 4px
         border-bottom-right-radius: 4px
 
 .table
-  tbody
-    tr:hover
-      td
+  > tbody
+    > tr:hover
+      > td
         background-color: transparent
-      th
+      > th
         background-color: transparent
 
 i.unsilenced
   margin-right: 7px
 
 table.table#events_table
-  tbody
-    tr
+  > tbody
+    > tr
 
-      td.client
+      > td.client
         font-weight: bold
         white-space: nowrap
 
-      td.output
+      > td.output
         white-space: normal
         word-break: break-all
 
-    tr.unknown
-      td
+    > tr.unknown
+      > td
         background-color: #eee
         color: #999
 
-    tr.unknown:hover
-      td
+    > tr.unknown:hover
+      > td
         background-color: #999
         color: #fff
 
-    tr.critical
-      td
+    > tr.critical
+      > td
         background-color: #f4c8c5
         color: #9d261d
 
-    tr.critical:hover
-      td
+    > tr.critical:hover
+      > td
         background-color: #9d261d
         color: #fff
 
-    tr.warning
-      td
+    > tr.warning
+      > td
         background-color: #fee9cc
         color: #f89406
 
 
-    tr.warning:hover
-      td
+    > tr.warning:hover
+      > td
         background-color: #f89406
         color: #fff
 
 table.table#generic
-  tbody
-    tr
+  > tbody
+    > tr
       color: #999
       background-color: #eee
 
-      td
+      > td
         font-weight: bold
 
-    tr:hover
+    > tr:hover
       color: #eee
       background-color: #999
 
@@ -382,3 +382,6 @@ ul.dropdown-menu > li.dropdown-header
   i
     font-size: 140px
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(1,0,0,0.7)), to(rgba(0,0,0,1)))
+
+.label
+  letter-spacing: 0.08em
