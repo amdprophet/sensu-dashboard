@@ -1,0 +1,31 @@
+.container-fluid
+  .row-fluid
+    .col-lg-12
+      h1 Dashboard
+  .row
+    .dashboard
+      .col-lg-3
+        #events.default
+          .small Events
+          i.fa.fa-bell.fa-4x
+          | &nbsp;&nbsp;&nbsp;
+          span.count 0
+      .col-lg-3
+        #critical.default
+          .small Clients in critical state
+          i.fa.fa-ban.fa-4x
+          | &nbsp;&nbsp;&nbsp;
+          span.count 0
+      .col-lg-3
+        #warning.default
+          .small Clients in non-critical state
+          i.fa.fa-exclamation-triangle.fa-4x
+          | &nbsp;&nbsp;&nbsp;
+          span.count 0
+      .col-lg-3
+        #clients.default
+          .small Clients
+          i.fa.fa-hdd-o.fa-4x
+          | &nbsp;&nbsp;&nbsp;
+          span.count 0
+  #events-list.list

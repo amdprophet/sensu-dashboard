@@ -1,0 +1,76 @@
+.container-fluid
+  .row-fluid
+    .col-lg-12
+      h1 Events
+  .row
+    .col-lg-12
+      form.sensu-filter.pull-right.ng-pristine.ng-valid(role="search")
+        input.form-control.input-md(type="text" placeholder="Search")
+        button.btn.btn-sm
+          i.fa.fa-search
+
+      #counts(events-counts)
+
+      .btn-group
+        a#toggle-checkboxes.btn.btn-success(href="#events")
+          i.icon-check.icon-white
+        a.btn.btn-success.dropdown-toggle(data-toggle="dropdown" href="#")
+          span.caret
+        ul.dropdown-menu
+          li.dropdown-header Select
+          li
+            a#select-all(href="#events")
+              i.icon-check
+              | All
+          li
+            a#select-critical(href="#events")
+              i.icon-fire
+              | Critical
+          li
+            a#select-unknown href="#events"
+              i.icon-question-sign
+              | Unknown
+          li
+            a#select-warning href="#events"
+              i.icon-warning-sign
+              | Warning
+          li
+            a#select-silenced-clients href="#events"
+              i.icon-volume-off
+              | Silenced Clients
+          li
+            a#select-silenced-checks href="#events"
+              i.icon-volume-off
+              | Silenced Checks
+          li
+            a#select-unsilenced-clients href="#events"
+              i.icon-volume-up
+              | Unsilenced Clients
+          li
+            a#select-unsilenced-checks href="#events"
+              i.icon-volume-up
+              | Unsilenced Checks
+          li.divider
+          li.dropdown-header Actions
+          li
+            a#resolve-selected href="#events"
+              i.icon-ok-sign
+              | Resolve
+          li
+            a#silence-selected-clients href="#events"
+              i.icon-volume-off
+              | Silence Clients
+          li
+            a#silence-selected-checks href="#events"
+              i.icon-volume-off
+              | Silence Checks
+          li
+            a#unsilence-selected-clients href="#events"
+              i.icon-volume-up
+              | Unsilence Clients
+          li
+            a#unsilence-selected-checks href="#events"
+              i.icon-volume-up
+              | Unsilence Checks
+
+      #list(events-list)

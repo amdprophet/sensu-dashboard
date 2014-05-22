@@ -1,0 +1,64 @@
+doctype
+html(lang="en" ng-app="sensuApp")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    title Sensu Dashboard
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="author" content="Justin Kolberg")
+    meta(name="Copyright" content="Copyright Sonian, Inc. 2014. MIT License.")
+    //- standard favicon
+    link(rel="icon" type="image/png" href="img/favicon_64.png")
+    //- favicon for iPhone
+    link(rel="apple-touch-icon" type="image/png" href="img/favicon_57.png")
+    //- favicon for Retina iPhone
+    link(rel="apple-touch-icon" type="image/png" href="img/favicon_114.png" sizes="114x114")
+    //- favicon for iPad
+    link(rel="apple-touch-icon" type="image/png" href="img/favicon_72.png" sizes="72x72")
+    //- favicon for Retina iPad
+    link(rel="apple-touch-icon" type="image/png" href="img/favicon_144.png" sizes="144x144")
+    //- multi resolution favicon for IE
+    link(rel="shortcut icon" href="favicon.ico")
+    link(rel="stylesheet" type="text/css" href="assets/app.css")
+    link(rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700")
+  body(ng-controller="MainController")
+    .navbar.navbar-twitch(role="navigation")
+      .container
+        div
+          ul.nav.navbar-nav
+            li#dashboard
+              a(href="#dashboard")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Dashboard")
+                  i.fa.fa-tachometer
+            li#events
+              a(href="#events")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Events")
+                  i.fa.fa-tasks
+            li#clients
+              a(href="#clients")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Clients")
+                  i.fa.fa-hdd-o
+            li#stashes
+              a(href="#stashes")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Stashes")
+                  i.fa.fa-key
+            li#checks
+              a(href="#checks")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Checks")
+                  i.fa.fa-check-square
+            li#info
+              a(href="#info")
+                span.small-nav(data-toggle="tooltip" data-placement="right" title="Information")
+                  i.fa.fa-info-circle
+    #page-wrapper
+      .main-view(ng-view)
+      //- #initial-loading-indicator-container
+      //- i#initial-loading-indicator.icon-spinner.icon-spin
+    //- footer
+    //-   | &copy; Copyright
+    //-   a(href="http://www.sonian.com")
+    //-     | Sonian, Inc.
+    //-   | 2014
+    //-   a(href="https://github.com/sensu/sensu-dashboard/blob/master/MIT-LICENSE.txt") License (MIT)
+
+script(src="assets/app.js")

@@ -1,0 +1,21 @@
+
+<table id="events_table" class="table table-bordered sensu-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th class="col_client">Client</th>
+      <th class="col_check">Check</th>
+      <th class="col_output">Output</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="event in events | orderBy:sortByStatus">
+    <tr ng-class="{ warning:isWarning(event.status), critical:isCritical(event.status), unknown:isUnknown(event.status) }">
+      <td class="select">
+        <input type="checkbox"/>
+      </td>
+      <td class="client"><i class="icon-volume-off icon-white"></i> {{event.client}}</td>
+      <td class="check"><i class="icon-volume-up icon-white"></i> {{event.check}}</td>
+      <td class="output">{{event.output}}</td>
+    </tr>
+  </tbody>
+</table>

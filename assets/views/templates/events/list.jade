@@ -1,0 +1,19 @@
+table#events_table.table.table-bordered.sensu-table
+  thead
+    tr
+      th
+      th.col_client Client
+      th.col_check Check
+      th.col_output Output
+  tbody(ng-repeat="event in events | orderBy:sortByStatus")
+    tr(ng-class="{ warning:isWarning(event.status), critical:isCritical(event.status), unknown:isUnknown(event.status) }")
+      td.select
+        input(type="checkbox")
+      td.client
+        i.icon-volume-off.icon-white
+        |  {{event.client}}
+      td.check
+        i.icon-volume-up.icon-white
+        |  {{event.check}}
+      td.output
+        | {{event.output}}
