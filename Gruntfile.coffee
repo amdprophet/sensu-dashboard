@@ -47,14 +47,22 @@ module.exports = (grunt) ->
         files: [ "assets/views/**/*.jade" ]
         tasks: [ "jade" ]
 
-  # Load the plugin that provides the "uglify" task.
+    connect:
+      static:
+        options:
+          hostname: "localhost"
+          port: 8000
+          base: "public"
+
+  # Load the GruntJS plugins.
   grunt.loadNpmTasks "grunt-contrib-coffee"
+  grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-sass"
 
   # Default task(s).
-  grunt.registerTask "default", [ "coffee", "sass", "jade", "watch" ]
+  grunt.registerTask "default", [ "coffee", "sass", "jade", "connect", "watch" ]
 
   return
