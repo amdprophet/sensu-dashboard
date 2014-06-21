@@ -9,22 +9,22 @@
     <div class="dashboard">
       <div class="col-lg-3">
         <div id="events" class="default">
-          <div class="small">Events</div><i class="fa fa-bell fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">0</span>
+          <div class="small">Total Events</div><i class="fa fa-bell fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">{{ events.length }}</span>
         </div>
       </div>
       <div class="col-lg-3">
         <div id="critical" class="default">
-          <div class="small">Clients in critical state</div><i class="fa fa-ban fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">0</span>
+          <div class="small">Events in Critical State</div><i class="fa fa-ban fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">{{ criticalEvents().length }}</span>
         </div>
       </div>
       <div class="col-lg-3">
         <div id="warning" class="default">
-          <div class="small">Clients in non-critical state</div><i class="fa fa-exclamation-triangle fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">0</span>
+          <div class="small">Events in Unknown State</div><i class="fa fa-exclamation-triangle fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">{{ unknownEvents().length }}</span>
         </div>
       </div>
       <div class="col-lg-3">
         <div id="clients" class="default">
-          <div class="small">Clients</div><i class="fa fa-hdd-o fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">0</span>
+          <div class="small">Events in Warning State</div><i class="fa fa-hdd-o fa-4x"></i>&nbsp;&nbsp;&nbsp;<span class="count">{{ warningEvents().length }}</span>
         </div>
       </div>
     </div>

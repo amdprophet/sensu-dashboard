@@ -1,7 +1,9 @@
 (->
   angular.module("sensuApp").factory "SensuEvents", ($resource) ->
-    return $resource "http://localhost:8080/events", {},
+    resource = $resource "http://localhost:4567/events", {},
       query:
         method: "GET",
-        isArray: true
+        isArray: true,
+        headers:
+          Authorization: "Basic " + btoa("foo:bar")
 )()
