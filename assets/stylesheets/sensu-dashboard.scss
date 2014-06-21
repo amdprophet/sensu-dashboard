@@ -136,6 +136,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 }
 
+.page-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
 /* Modal */
 
 .modal-body {
@@ -415,9 +420,6 @@ hr {
 $fade-time: 0.5s;
 
 .main-view {
-  width: 100%;
-  position: absolute;
-
   &.ng-leave {
     @include animation(fadeOut, $fade-time)
   }
