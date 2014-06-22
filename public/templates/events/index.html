@@ -5,34 +5,66 @@
       <h1>Events</h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <form role="search" class="sensu-filter pull-right ng-pristine ng-valid">
-        <input type="text" placeholder="Search" class="form-control input-md"/>
-        <button class="btn btn-sm"><i class="fa fa-search"></i></button>
-      </form>
-      <div id="counts" events-counts="events-counts"></div>
-      <div class="btn-group"><a id="toggle-checkboxes" href="#events" class="btn btn-success"><i class="icon-check icon-white"></i></a><a data-toggle="dropdown" href="#" class="btn btn-success dropdown-toggle"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li class="dropdown-header">Select</li>
-          <li><a id="select-all" href="#events"><i class="icon-check"></i>All</a></li>
-          <li><a id="select-critical" href="#events"><i class="icon-fire"></i>Critical</a></li>
-          <li><a id="select-unknown">href="#events"<i class="icon-question-sign"></i>Unknown</a></li>
-          <li><a id="select-warning">href="#events"<i class="icon-warning-sign"></i>Warning</a></li>
-          <li><a id="select-silenced-clients">href="#events"<i class="icon-volume-off"></i>Silenced Clients</a></li>
-          <li><a id="select-silenced-checks">href="#events"<i class="icon-volume-off"></i>Silenced Checks</a></li>
-          <li><a id="select-unsilenced-clients">href="#events"<i class="icon-volume-up"></i>Unsilenced Clients</a></li>
-          <li><a id="select-unsilenced-checks">href="#events"<i class="icon-volume-up"></i>Unsilenced Checks</a></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Actions</li>
-          <li><a id="resolve-selected">href="#events"<i class="icon-ok-sign"></i>Resolve</a></li>
-          <li><a id="silence-selected-clients">href="#events"<i class="icon-volume-off"></i>Silence Clients</a></li>
-          <li><a id="silence-selected-checks">href="#events"<i class="icon-volume-off"></i>Silence Checks</a></li>
-          <li><a id="unsilence-selected-clients">href="#events"<i class="icon-volume-up"></i>Unsilence Clients</a></li>
-          <li><a id="unsilence-selected-checks">href="#events"<i class="icon-volume-up"></i>Unsilence Checks</a></li>
-        </ul>
+  <div class="row"></div>
+  <div id="events-list" class="list">
+    <div class="event-columns row-fluid">
+      <div class="col-xs-4">
+        <h3 class="critical">Critical</h3>
+        <div class="event-items">
+          <div ng-repeat="event in events" class="event-item">
+            <div class="row-fluid">
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.client.name }}</span></div>
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.check.name }}</span></div>
+              <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="list" events-list="events-list"></div>
+      <div class="col-xs-4">
+        <h3 class="unknown">Unknown</h3>
+        <div class="event-items">
+          <div ng-repeat="event in events" class="event-item">
+            <div class="row-fluid">
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.client.name }}</span></div>
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.check.name }}</span></div>
+              <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <h3 class="warning">Warning</h3>
+        <div class="event-items">
+          <div ng-repeat="event in events" class="event-item">
+            <div class="row-fluid">
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.client.name }}</span></div>
+              <div class="col-xs-4"><i class="icon-volume-up icon-white"></i><span>{{ event.check.name }}</span></div>
+              <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
     </div>
+    <!-- .event-rows-->
+    <!--   .event-row(ng-repeat="event in events | filter:sortByStatus" ng-class="{ 'critical':isCritical(event), 'warning':isWarning(event), 'unknown':isUnknown(event) }")-->
+    <!--     .row-fluid-->
+    <!--       .col-xs-3-->
+    <!--         i.icon-volume-up.icon-white-->
+    <!--         span {{ event.client.name }}-->
+    <!--       .col-xs-6-->
+    <!--         i.icon-volume-up.icon-white-->
+    <!--         span {{ event.check.name }}-->
+    <!--       .col-xs-3-->
+    <!--         span {{ event.check.executed | date:'yyyy-MM-ddTHH:mm:ss:Z' }}-->
+    <!--       .clearfix-->
+    <!--     .row-fluid-->
+    <!--       .col-lg-12.output-->
+    <!--         span {{ event.check.output }}-->
+    <!--       .clearfix-->
+    <!--     .clearfix-->
   </div>
 </div>

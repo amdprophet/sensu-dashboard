@@ -3,74 +3,65 @@
     .col-lg-12
       h1 Events
   .row
-    .col-lg-12
-      form.sensu-filter.pull-right.ng-pristine.ng-valid(role="search")
-        input.form-control.input-md(type="text" placeholder="Search")
-        button.btn.btn-sm
-          i.fa.fa-search
-
-      #counts(events-counts)
-
-      .btn-group
-        a#toggle-checkboxes.btn.btn-success(href="#events")
-          i.icon-check.icon-white
-        a.btn.btn-success.dropdown-toggle(data-toggle="dropdown" href="#")
-          span.caret
-        ul.dropdown-menu
-          li.dropdown-header Select
-          li
-            a#select-all(href="#events")
-              i.icon-check
-              | All
-          li
-            a#select-critical(href="#events")
-              i.icon-fire
-              | Critical
-          li
-            a#select-unknown href="#events"
-              i.icon-question-sign
-              | Unknown
-          li
-            a#select-warning href="#events"
-              i.icon-warning-sign
-              | Warning
-          li
-            a#select-silenced-clients href="#events"
-              i.icon-volume-off
-              | Silenced Clients
-          li
-            a#select-silenced-checks href="#events"
-              i.icon-volume-off
-              | Silenced Checks
-          li
-            a#select-unsilenced-clients href="#events"
-              i.icon-volume-up
-              | Unsilenced Clients
-          li
-            a#select-unsilenced-checks href="#events"
-              i.icon-volume-up
-              | Unsilenced Checks
-          li.divider
-          li.dropdown-header Actions
-          li
-            a#resolve-selected href="#events"
-              i.icon-ok-sign
-              | Resolve
-          li
-            a#silence-selected-clients href="#events"
-              i.icon-volume-off
-              | Silence Clients
-          li
-            a#silence-selected-checks href="#events"
-              i.icon-volume-off
-              | Silence Checks
-          li
-            a#unsilence-selected-clients href="#events"
-              i.icon-volume-up
-              | Unsilence Clients
-          li
-            a#unsilence-selected-checks href="#events"
-              i.icon-volume-up
-              | Unsilence Checks
-
-      #list(events-list)
+  #events-list.list
+    .event-columns.row-fluid
+      .col-xs-4
+        h3.critical Critical
+        .event-items
+          .event-item(ng-repeat="event in events")
+            .row-fluid
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.client.name }}
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.check.name }}
+              .col-xs-4
+                span {{ event.check.executed | date }}
+              .clearfix
+      .col-xs-4
+        h3.unknown Unknown
+        .event-items
+          .event-item(ng-repeat="event in events")
+            .row-fluid
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.client.name }}
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.check.name }}
+              .col-xs-4
+                span {{ event.check.executed | date }}
+              .clearfix
+      .col-xs-4
+        h3.warning Warning
+        .event-items
+          .event-item(ng-repeat="event in events")
+            .row-fluid
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.client.name }}
+              .col-xs-4
+                i.icon-volume-up.icon-white
+                span {{ event.check.name }}
+              .col-xs-4
+                span {{ event.check.executed | date }}
+              .clearfix
+      .clearfix
+    // .event-rows
+    //   .event-row(ng-repeat="event in events | filter:sortByStatus" ng-class="{ 'critical':isCritical(event), 'warning':isWarning(event), 'unknown':isUnknown(event) }")
+    //     .row-fluid
+    //       .col-xs-3
+    //         i.icon-volume-up.icon-white
+    //         span {{ event.client.name }}
+    //       .col-xs-6
+    //         i.icon-volume-up.icon-white
+    //         span {{ event.check.name }}
+    //       .col-xs-3
+    //         span {{ event.check.executed | date:'yyyy-MM-ddTHH:mm:ss:Z' }}
+    //       .clearfix
+    //     .row-fluid
+    //       .col-lg-12.output
+    //         span {{ event.check.output }}
+    //       .clearfix
+    //     .clearfix
