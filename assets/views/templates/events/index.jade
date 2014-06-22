@@ -5,7 +5,7 @@
   .row
   #events-list.list
     .event-columns.row-fluid
-      .col-xs-4
+      .col-sm-4
         h3.critical Critical
         .event-items
           .event-item(ng-repeat="event in events")
@@ -19,7 +19,7 @@
               .col-xs-4
                 span {{ event.check.executed | date }}
               .clearfix
-      .col-xs-4
+      .col-sm-4
         h3.unknown Unknown
         .event-items
           .event-item(ng-repeat="event in events")
@@ -33,7 +33,7 @@
               .col-xs-4
                 span {{ event.check.executed | date }}
               .clearfix
-      .col-xs-4
+      .col-sm-4
         h3.warning Warning
         .event-items
           .event-item(ng-repeat="event in events")
