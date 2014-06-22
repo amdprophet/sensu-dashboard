@@ -8,7 +8,7 @@
       .col-sm-4
         h3.critical Critical
         .event-items
-          .event-item(ng-repeat="event in events")
+          .event-item(ng-repeat="event in events | eventStatus:'critical'" data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
             .row-fluid
               .col-xs-4
                 i.fa.fa-volume-up.fa-fw
@@ -19,11 +19,15 @@
               .col-xs-4
                 span {{ event.check.executed | date }}
               .clearfix
+            .row-fluid.collapse(id="collapse-{{ event.id }}")
+              .col-xs-12
+                p {{ event.check.output }}
+              .clearfix
       .col-sm-4
         h3.unknown Unknown
         .event-items
-          .event-item(ng-repeat="event in events")
-            .row-fluid
+          .event-item(ng-repeat="event in events | eventStatus:'unknown'")
+            .row-fluid(data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
               .col-xs-4
                 i.fa.fa-volume-up.fa-fw
                 span {{ event.client.name }}
@@ -33,11 +37,14 @@
               .col-xs-4
                 span {{ event.check.executed | date }}
               .clearfix
+            .row-fluid.collapse(id="collapse-{{ event.id }}")
+              .col-xs-12
+                p {{ event.check.output }}
       .col-sm-4
         h3.warning Warning
         .event-items
-          .event-item(ng-repeat="event in events")
-            .row-fluid
+          .event-item(ng-repeat="event in events | eventStatus:'warning'")
+            .row-fluid(data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
               .col-xs-4
                 i.fa.fa-volume-up.fa-fw
                 span {{ event.client.name }}
@@ -47,6 +54,9 @@
               .col-xs-4
                 span {{ event.check.executed | date }}
               .clearfix
+            .row-fluid.collapse(id="collapse-{{ event.id }}")
+              .col-xs-12
+                p {{ event.check.output }}
       .clearfix
     // .event-rows
     //   .event-row(ng-repeat="event in events | filter:sortByStatus" ng-class="{ 'critical':isCritical(event), 'warning':isWarning(event), 'unknown':isUnknown(event) }")

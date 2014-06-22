@@ -11,11 +11,17 @@
       <div class="col-sm-4">
         <h3 class="critical">Critical</h3>
         <div class="event-items">
-          <div ng-repeat="event in events" class="event-item">
+          <div ng-repeat="event in events | eventStatus:'critical'" data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}" class="event-item">
             <div class="row-fluid">
               <div class="col-xs-4"><i class="fa fa-volume-up fa-fw"></i><span>{{ event.client.name }}</span></div>
               <div class="col-xs-4"><i class="fa fa-volume-off fa-fw"></i><span>{{ event.check.name }}</span></div>
               <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
+              <div class="clearfix"></div>
+            </div>
+            <div id="collapse-{{ event.id }}" class="row-fluid collapse">
+              <div class="col-xs-12">
+                <p>{{ event.check.output }}</p>
+              </div>
               <div class="clearfix"></div>
             </div>
           </div>
@@ -24,12 +30,17 @@
       <div class="col-sm-4">
         <h3 class="unknown">Unknown</h3>
         <div class="event-items">
-          <div ng-repeat="event in events" class="event-item">
-            <div class="row-fluid">
+          <div ng-repeat="event in events | eventStatus:'unknown'" class="event-item">
+            <div data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}" class="row-fluid">
               <div class="col-xs-4"><i class="fa fa-volume-up fa-fw"></i><span>{{ event.client.name }}</span></div>
               <div class="col-xs-4"><i class="fa fa-volume-up fa-fw"></i><span>{{ event.check.name }}</span></div>
               <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
               <div class="clearfix"></div>
+            </div>
+            <div id="collapse-{{ event.id }}" class="row-fluid collapse">
+              <div class="col-xs-12">
+                <p>{{ event.check.output }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -37,12 +48,17 @@
       <div class="col-sm-4">
         <h3 class="warning">Warning</h3>
         <div class="event-items">
-          <div ng-repeat="event in events" class="event-item">
-            <div class="row-fluid">
+          <div ng-repeat="event in events | eventStatus:'warning'" class="event-item">
+            <div data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}" class="row-fluid">
               <div class="col-xs-4"><i class="fa fa-volume-up fa-fw"></i><span>{{ event.client.name }}</span></div>
               <div class="col-xs-4"><i class="fa fa-volume-up fa-fw"></i><span>{{ event.check.name }}</span></div>
               <div class="col-xs-4"><span>{{ event.check.executed | date }}</span></div>
               <div class="clearfix"></div>
+            </div>
+            <div id="collapse-{{ event.id }}" class="row-fluid collapse">
+              <div class="col-xs-12">
+                <p>{{ event.check.output }}</p>
+              </div>
             </div>
           </div>
         </div>

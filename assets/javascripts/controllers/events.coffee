@@ -29,7 +29,6 @@
         !($scope.isWarning(event) && $scope.isCritical(event))
 
       SensuEvents.query (response) ->
-        console.log response
         $scope.events = response
   ]
 )()
