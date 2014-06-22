@@ -50,7 +50,6 @@ module.exports = (grunt) ->
     connect:
       static:
         options:
-          hostname: "localhost"
           port: 8000
           base: "public"
 
