@@ -545,12 +545,20 @@ $fade-time: 0.5s;
       padding: 7px;
       border-bottom: 1px solid #eee;
 
+      .row-fluid > div {
+        white-space: nowrap;
+      }
+
       .row-fluid > div:nth-child(2) {
-        text-align: center;
+        text-align: left;
       }
 
       .row-fluid > div:nth-child(3) {
         text-align: right;
+      }
+
+      i.fa {
+        padding-right: 5px;
       }
     }
   }
