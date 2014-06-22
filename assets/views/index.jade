@@ -25,11 +25,8 @@ html(lang="en" ng-app="sensuApp")
     link(rel="stylesheet" type="text/css" href="css/app.css")
   body(ng-controller="MainController")
     .navbar.navbar-xs.show-xs.hidden-sm.hidden-md.hidden-lg(role="navigation")
-      .row-fluid
-        .col-xs-2
-          i.fa.fa-bars.fa-2x
-        .col-xs-10
-          h3 Sensu Dashboard
+      a(href="#").fa.fa-bars.fa-2x
+      h3 Sensu Dashboard
     .navbar.navbar-twitch.hidden-xs(role="navigation")
       .container
         div
