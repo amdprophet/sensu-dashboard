@@ -1,0 +1,108 @@
+.navbar-twitch {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 100%;
+  border-radius: 0px;
+  border: 0px;
+  z-index: 1030;
+  &.open {
+    width: 240px;
+  }
+  > .container {
+    padding: 0px;
+    width: 100%;
+  }
+  .navbar-header {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0px;
+  }
+  .navbar-brand {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    height: 50px;
+  }
+  > .container .navbar-brand {
+    padding: 0px;
+    margin: 0px;
+    > .small-nav {
+      display: block;
+      > span.logo {
+        display: block;
+        font-weight: bold;
+        padding: 15px 2px 15px 3px;
+        font-size: 18pt;
+      }
+    }
+  }
+  &.open > .container .navbar-brand {
+    > .full-nav {
+      display: block;
+      font-weight: bold;
+      padding: 15px 2px 15px 3px;
+      font-size: 18pt;
+    }
+    width: 100%;
+    padding: 15px 15px 60px;
+    text-align: center;
+  }
+  &.navbar-inverse > .container .navbar-brand > .small-nav > span.logo {
+    /*color: rgb(255, 255, 255);*/
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  > .container .full-nav {
+    display: none;
+  }
+  &.open > .container {
+    .full-nav {
+      display: block;
+    }
+    .small-nav {
+      display: none;
+    }
+  }
+  .navbar-collapse {
+    padding: 0px;
+  }
+  .navbar-nav {
+    float: none;
+    margin: 0px;
+    > {
+      li > a {
+        color: #fff;
+        padding: 0px;
+        border-left: 3px solid #2C394A;
+        &:hover {
+          color: #fff;
+          background-color: #2C394A;
+          border-left: 3px solid #5F97FB;
+        }
+      }
+      .selected > a {
+        color: #2C394A;
+        background-color: #fff;
+        border-left: 3px solid #fff;
+      }
+      li > a > span {
+        display: block;
+        font-size: 16pt;
+        padding: 13px 15px 13px 12px;
+      }
+    }
+  }
+  .tooltip {
+    max-width: auto;
+    white-space: nowrap;
+    .tooltip-inner {
+      max-width: auto;
+      white-space: nowrap;
+    }
+  }
+}

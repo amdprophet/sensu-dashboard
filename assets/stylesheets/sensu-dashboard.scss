@@ -1,16 +1,8 @@
-@mixin animation($style, $duration) {
-  animation: $style $duration;
-  -webkit-animation: $style $duration;
-  -moz-animation: $style $duration;
-  -ms-animation: $style $duration;
-}
-
 html, html a {
   -webkit-font-smoothing: antialiased !important;
 }
 
 body {
-  padding-left: 65px;
   background-color: #fff;
   font-weight: 400;
   color: #4d4d4d;
@@ -23,146 +15,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #56575B;
 }
 
-.navbar {
-  background-color: #2C394A;
-}
-
-.navbar-twitch {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 50px;
-  height: 100%;
-  border-radius: 0px;
-  border: 0px;
-  z-index: 1030;
-  &.open {
-    width: 240px;
-  }
-  > .container {
-    padding: 0px;
-    width: 100%;
-  }
-  .navbar-header {
-    float: none;
-    display: block;
-    width: 100%;
-    margin: 0px;
-  }
-  .navbar-brand {
-    float: none;
-    display: block;
-    width: 100%;
-    margin: 0px;
-    height: 50px;
-  }
-  > .container .navbar-brand {
-    padding: 0px;
-    margin: 0px;
-    > .small-nav {
-      display: block;
-      > span.logo {
-        display: block;
-        font-weight: bold;
-        padding: 15px 2px 15px 3px;
-        font-size: 18pt;
-      }
-    }
-  }
-  &.open > .container .navbar-brand {
-    > .full-nav {
-      display: block;
-      font-weight: bold;
-      padding: 15px 2px 15px 3px;
-      font-size: 18pt;
-    }
-    width: 100%;
-    padding: 15px 15px 60px;
-    text-align: center;
-  }
-  &.navbar-inverse > .container .navbar-brand > .small-nav > span.logo {
-    /*color: rgb(255, 255, 255);*/
-  }
-  .navbar-nav > li {
-    float: none;
-  }
-  > .container .full-nav {
-    display: none;
-  }
-  &.open > .container {
-    .full-nav {
-      display: block;
-    }
-    .small-nav {
-      display: none;
-    }
-  }
-  .navbar-collapse {
-    padding: 0px;
-  }
-  .navbar-nav {
-    float: none;
-    margin: 0px;
-    > {
-      li > a {
-        color: #fff;
-        padding: 0px;
-        border-left: 3px solid #2C394A;
-        &:hover {
-          color: #fff;
-          background-color: #2C394A;
-          border-left: 3px solid #5F97FB;
-        }
-      }
-      .selected > a {
-        color: #2C394A;
-        background-color: #fff;
-        border-left: 3px solid #fff;
-      }
-      li > a > span {
-        display: block;
-        font-size: 16pt;
-        padding: 13px 15px 13px 12px;
-      }
-    }
-  }
-  .tooltip {
-    max-width: auto;
-    white-space: nowrap;
-    .tooltip-inner {
-      max-width: auto;
-      white-space: nowrap;
-    }
-  }
-}
-
 .page-wrapper {
   position: absolute;
   width: 100%;
-}
-
-/* Modal */
-
-.modal-body {
-  background-color: #fff;
-}
-
-.modal.modal-wide .modal-dialog {
-  width: 95%;
-  padding: 20px 0px 20px 0px;
-}
-
-.modal-wide .modal-body {
-  overflow-y: auto;
-  padding-top: 0px;
-}
-
-.not-found {
-  font-size: 30pt;
-  text-align: center;
-  .fa {
-    font-size: 50px;
-  }
 }
 
 hr {
@@ -204,7 +59,7 @@ hr {
 
 .list {
   position: relative;
-  padding: 20px 15px 0px 10px;
+  //padding: 20px 15px 0px 10px;
   min-height: 1px;
   a {
     text-decoration: none;
@@ -328,41 +183,6 @@ hr {
   }
 }
 
-.dashboard {
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #fff;
-  text-align: center;
-  fa {
-    text-align: left;
-  }
-  .critical {
-    background-color: #F04124;
-    min-height: 125px;
-  }
-  .warning {
-    background-color: #e99002;
-    min-height: 125px;
-  }
-  .success {
-    background-color: #43ac6a;
-    min-height: 125px;
-  }
-  .default {
-    background-color: #2C394A;
-    min-height: 125px;
-  }
-  .count {
-    font-weight: 700;
-    font-size: 60px;
-  }
-  .small {
-    font-size: 15px;
-    font-weight: 700;
-    padding-top: 15px;
-  }
-}
-
 .tag {
   padding: 3px 7px;
   color: #fff;
@@ -378,45 +198,6 @@ hr {
   }
 }
 
-.sensu-filter {
-  position: relative;
-  margin-right: 8px;
-
-  button {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    color: #D74B4B;
-    background-color: transparent;
-  }
-}
-
-#counts_container {
-  ul {
-    list-style-type: none;
-    list-style-image: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: inline-block;
-      margin: 0 5px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      span {
-        font-size: 8pt;
-      }
-    }
-  }
-}
-
 $fade-time: 0.5s;
 
 .main-view {
@@ -429,137 +210,6 @@ $fade-time: 0.5s;
   }
 }
 
-#events_table tbody {
-  &.ng-leave {
-    @include animation(fadeOut, $fade-time)
-  }
-
-  &.ng-enter {
-    @include animation(fadeIn, $fade-time)
-  }
-}
-
-.event-rows {
-  margin-top: 20px;
-}
-
-.event-row {
-  margin-top: 3px;
-  background-color: #2C394A;
-  width: 100%;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &.critical {
-    background-color: #F04124;
-    //background-color: #f4c8c5;
-
-    span {
-      //color: #9d261d;
-    }
-  }
-
-  &.warning {
-    background-color: #e99002;
-    //background-color: #fee9cc;
-
-    span {
-      //color: #f89406;
-    }
-  }
-
-  &.unknown {
-
-  }
-
-  span {
-    font-size: 1.0em;
-    font-weight: bold;
-    color: #fff;
-    vertical-align: middle;
-    letter-spacing: 0.8px;
-  }
-
-  .row-fluid:nth-child(2) {
-    background-color: #f0f0f0 !important;
-    border-bottom: 1px solid #ddd;
-
-    span {
-      color: #666;
-    }
-  }
-
-  .row-fluid > div:first-child {
-  }
-
-  .row-fluid > div:nth-child(2) {
-    text-align: center;
-  }
-
-  .row-fluid > div:nth-child(3) {
-    text-align: right;
-  }
-
-  .row-fluid > .output {
-    text-align: center !important;
-    padding: 7px;
-  }
-}
-
-.event-columns {
-  & > div {
-    padding: 0;
-
-    &:nth-child(2) {
-      padding-left: 7px;
-      padding-right: 7px;
-    }
-  }
-
-  h3 {
-    text-align: center;
-    padding: 7px;
-    color: #fff;
-    margin: 0;
-
-    &.critical {
-      background-color: #f04124;
-    }
-
-    &.warning {
-      background-color: #e99002;
-    }
-
-    &.unknown {
-      background-color: #2c394a;
-    }
-  }
-
-  .event-items {
-    width: 100%;
-
-    .event-item {
-      background-color: #fafafa;
-      padding: 7px;
-      border-bottom: 1px solid #eee;
-
-      .row-fluid > div {
-        white-space: nowrap;
-      }
-
-      .row-fluid > div:nth-child(2) {
-        text-align: left;
-      }
-
-      .row-fluid > div:nth-child(3) {
-        text-align: right;
-      }
-
-      i.fa {
-        padding-right: 5px;
-      }
-    }
-  }
+.container-fluid {
+  padding: 0;
 }

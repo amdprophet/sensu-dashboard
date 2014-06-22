@@ -1,0 +1,23 @@
+.navbar.navbar-xs {
+  border: 0;
+  padding: 0;
+  line-height: 50px;
+
+  & > div > div {
+    padding: 0;
+    text-align: center;
+  }
+
+  i {
+    vertical-align: middle;
+  }
+
+  h3 {
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    vertical-align: middle;
+    text-align: left;
+  }
+}

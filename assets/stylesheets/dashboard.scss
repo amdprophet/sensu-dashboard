@@ -1,0 +1,34 @@
+.dashboard {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #fff;
+  text-align: center;
+  fa {
+    text-align: left;
+  }
+  .critical {
+    background-color: #F04124;
+    min-height: 125px;
+  }
+  .warning {
+    background-color: #e99002;
+    min-height: 125px;
+  }
+  .success {
+    background-color: #43ac6a;
+    min-height: 125px;
+  }
+  .default {
+    background-color: #2C394A;
+    min-height: 125px;
+  }
+  .count {
+    font-weight: 700;
+    font-size: 60px;
+  }
+  .small {
+    font-size: 15px;
+    font-weight: 700;
+    padding-top: 15px;
+  }
+}

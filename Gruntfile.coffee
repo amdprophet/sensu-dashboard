@@ -20,9 +20,7 @@ module.exports = (grunt) ->
     sass:
       compile:
         files:
-          "public/css/app.css": [
-            "assets/stylesheets/sensu-dashboard.scss"
-          ]
+          "public/css/app.css": "assets/stylesheets/app.scss"
 
     jade:
       compile:
@@ -57,9 +55,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-jade"
+  grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-watch"
-  grunt.loadNpmTasks "grunt-sass"
 
   # Default task(s).
   grunt.registerTask "default", [ "coffee", "sass", "jade", "connect", "watch" ]
