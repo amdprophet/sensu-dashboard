@@ -1,0 +1,8 @@
+{
+  "columns": [
+    "event",
+    "environment",
+    "description"
+  ],
+  "websockets": false
+}

@@ -16,8 +16,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .page-wrapper {
-  position: absolute;
-  width: 100%;
 }
 
 hr {
@@ -201,6 +199,10 @@ hr {
 $fade-time: 0.5s;
 
 .main-view {
+  float: none;
+  overflow: hidden;
+  width: 100%;
+
   &.ng-leave {
     @include animation(fadeOut, $fade-time)
   }
@@ -212,4 +214,14 @@ $fade-time: 0.5s;
 
 .container-fluid {
   padding: 0;
+}
+
+#page-wrapper {
+  overflow: hidden;
+}
+
+#sidebar-spacer {
+  float: left;
+  width: 55px;
+  height: 150px;
 }

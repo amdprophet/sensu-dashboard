@@ -11,6 +11,7 @@ module.exports = (grunt) ->
           join: true
         files:
           "public/js/app.js": [
+            "assets/javascripts/config.coffee"
             "assets/javascripts/application.coffee"
             "assets/javascripts/utilities/*.coffee"
             "assets/javascripts/filters/*.coffee"

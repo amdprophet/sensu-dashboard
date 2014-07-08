@@ -22,6 +22,7 @@
             .row-fluid.collapse(id="collapse-{{ event.id }}")
               .col-xs-12
                 p {{ event.check.output }}
+                .clearfix
               .clearfix
       .col-sm-4
         h3.unknown Unknown
@@ -40,6 +41,8 @@
             .row-fluid.collapse(id="collapse-{{ event.id }}")
               .col-xs-12
                 p {{ event.check.output }}
+                .clearfix
+              .clearfix
       .col-sm-4
         h3.warning Warning
         .event-items
@@ -57,21 +60,6 @@
             .row-fluid.collapse(id="collapse-{{ event.id }}")
               .col-xs-12
                 p {{ event.check.output }}
+                .clearfix
+              .clearfix
       .clearfix
-    // .event-rows
-    //   .event-row(ng-repeat="event in events | filter:sortByStatus" ng-class="{ 'critical':isCritical(event), 'warning':isWarning(event), 'unknown':isUnknown(event) }")
-    //     .row-fluid
-    //       .col-xs-3
-    //         i.icon-volume-up.icon-white
-    //         span {{ event.client.name }}
-    //       .col-xs-6
-    //         i.icon-volume-up.icon-white
-    //         span {{ event.check.name }}
-    //       .col-xs-3
-    //         span {{ event.check.executed | date:'yyyy-MM-ddTHH:mm:ss:Z' }}
-    //       .clearfix
-    //     .row-fluid
-    //       .col-lg-12.output
-    //         span {{ event.check.output }}
-    //       .clearfix
-    //     .clearfix

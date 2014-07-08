@@ -3,6 +3,7 @@
     "ngResource",
     "ngRoute",
     "ngAnimate",
+    "sensuApp.config",
   ])
 
   app.config [

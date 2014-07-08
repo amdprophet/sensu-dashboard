@@ -2,9 +2,12 @@
   angular.module("sensuApp").controller "DashboardController", [
     "$scope",
     "SensuEvents",
-    ($scope, SensuEvents) ->
+    "CONFIG",
+    ($scope, SensuEvents, CONFIG) ->
       $scope.message = "Sensu Dashboard"
       $scope.events = []
+
+      console.log CONFIG
 
       $scope.criticalEvents = ->
         results = []
