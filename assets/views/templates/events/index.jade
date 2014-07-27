@@ -1,65 +1,52 @@
-.container-fluid
-  .row-fluid
-    .col-lg-12
-      h1 Events
-  .row
-  #events-list.list
-    .event-columns.row-fluid
-      .col-sm-4
-        h3.critical Critical
-        .event-items
-          .event-item(ng-repeat="event in events | eventStatus:'critical'" data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
-            .row-fluid
-              .col-xs-4
-                i.fa.fa-volume-up.fa-fw
-                span {{ event.client.name }}
-              .col-xs-4
-                i.fa.fa-volume-off.fa-fw
-                span {{ event.check.name }}
-              .col-xs-4
-                span {{ event.check.executed | date }}
-              .clearfix
-            .row-fluid.collapse(id="collapse-{{ event.id }}")
-              .col-xs-12
-                p {{ event.check.output }}
-                .clearfix
-              .clearfix
-      .col-sm-4
-        h3.unknown Unknown
-        .event-items
-          .event-item(ng-repeat="event in events | eventStatus:'unknown'")
-            .row-fluid(data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
-              .col-xs-4
-                i.fa.fa-volume-up.fa-fw
-                span {{ event.client.name }}
-              .col-xs-4
-                i.fa.fa-volume-up.fa-fw
-                span {{ event.check.name }}
-              .col-xs-4
-                span {{ event.check.executed | date }}
-              .clearfix
-            .row-fluid.collapse(id="collapse-{{ event.id }}")
-              .col-xs-12
-                p {{ event.check.output }}
-                .clearfix
-              .clearfix
-      .col-sm-4
-        h3.warning Warning
-        .event-items
-          .event-item(ng-repeat="event in events | eventStatus:'warning'")
-            .row-fluid(data-toggle="collapse" data-parent=".event-items" href="#collapse-{{ event.id }}")
-              .col-xs-4
-                i.fa.fa-volume-up.fa-fw
-                span {{ event.client.name }}
-              .col-xs-4
-                i.fa.fa-volume-up.fa-fw
-                span {{ event.check.name }}
-              .col-xs-4
-                span {{ event.check.executed | date }}
-              .clearfix
-            .row-fluid.collapse(id="collapse-{{ event.id }}")
-              .col-xs-12
-                p {{ event.check.output }}
-                .clearfix
-              .clearfix
-      .clearfix
+h1 Events
+
+h3.critical.center Critical Status
+
+.table-wrapper
+  .table
+    .table-row.table-header.critical
+      .table-cell Client
+      .table-cell Check
+      .table-cell Output
+    .table-row(ng-repeat="event in events")
+      .table-cell
+        i.fa.fa-volume-off.fa-fw
+        {{ event.client.name }}
+      .table-cell
+        i.fa.fa-volume-up.fa-fw
+        {{ event.check.name }}
+      .table-cell {{ event.check.output }}
+
+h3.unknown.center Unknown Status
+
+.table-wrapper
+  .table
+    .table-row.table-header.unknown
+      .table-cell Client
+      .table-cell Check
+      .table-cell Output
+    .table-row(ng-repeat="event in events")
+      .table-cell
+        i.fa.fa-volume-up.fa-fw
+        {{ event.client.name }}
+      .table-cell
+        i.fa.fa-volume-up.fa-fw
+        {{ event.check.name }}
+      .table-cell {{ event.check.output }}
+
+h3.warning.center Warning Status
+
+.table-wrapper
+  .table
+    .table-row.table-header.warning
+      .table-cell Client
+      .table-cell Check
+      .table-cell Output
+    .table-row(ng-repeat="event in events")
+      .table-cell
+        i.fa.fa-volume-up.fa-fw
+        {{ event.client.name }}
+      .table-cell
+        i.fa.fa-volume-off.fa-fw
+        {{ event.check.name }}
+      .table-cell {{ event.check.output }}
