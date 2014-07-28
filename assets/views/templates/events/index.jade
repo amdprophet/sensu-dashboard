@@ -11,10 +11,10 @@ h3.critical.center Critical Status
     .table-row(ng-repeat="event in events")
       .table-cell
         i.fa.fa-volume-off.fa-fw
-        {{ event.client.name }}
+        | {{ event.client.name }}
       .table-cell
         i.fa.fa-volume-up.fa-fw
-        {{ event.check.name }}
+        | {{ event.check.name }}
       .table-cell {{ event.check.output }}
 
 h3.unknown.center Unknown Status
@@ -28,10 +28,10 @@ h3.unknown.center Unknown Status
     .table-row(ng-repeat="event in events")
       .table-cell
         i.fa.fa-volume-up.fa-fw
-        {{ event.client.name }}
+        | {{ event.client.name }}
       .table-cell
         i.fa.fa-volume-up.fa-fw
-        {{ event.check.name }}
+        | {{ event.check.name }}
       .table-cell {{ event.check.output }}
 
 h3.warning.center Warning Status
@@ -45,8 +45,8 @@ h3.warning.center Warning Status
     .table-row(ng-repeat="event in events")
       .table-cell
         i.fa.fa-volume-up.fa-fw
-        {{ event.client.name }}
+        | {{ event.client.name }}
       .table-cell
         i.fa.fa-volume-off.fa-fw
-        {{ event.check.name }}
+        | {{ event.check.name }}
       .table-cell {{ event.check.output }}
