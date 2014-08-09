@@ -38,14 +38,6 @@ module.exports = (grunt) ->
           "public/css/vendor/bootstrap/bootstrap.css": ["bower_components/bootstrap/dist/css/bootstrap.css"]
           "public/css/vendor/bootstrap/bootstrap.css.map": ["bower_compontents/bootstrap/dist/css/bootstrap.css/map"]
           "public/js/vendor/bootstrap/bootstrap.js": ["bower_components/bootstrap/dist/js/bootstrap.js"]
-      "fontawesome":
-        files:
-          "public/css/vendor/fontawesome/font-awesome.css": ["bower_components/components-font-awesome/css/font-awesome.css"]
-          "public/css/vendor/fonts/FontAwesome.otf": ["bower_components/components-font-awesome/fonts/FontAwesome.otf"]
-          "public/css/vendor/fonts/fontawesome-webfont.eot": ["bower_components/components-font-awesome/fonts/fontawesome-webfont.eot"]
-          "public/css/vendor/fonts/fontawesome-webfont.svg": ["bower_components/components-font-awesome/fonts/fontawesome-webfont.svg"]
-          "public/css/vendor/fonts/fontawesome-webfont.ttf": ["bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf"]
-          "public/css/vendor/fonts/fontawesome-webfont.woff": ["bower_components/components-font-awesome/fonts/fontawesome-webfont.woff"]
 
       "jquery":
         files:
