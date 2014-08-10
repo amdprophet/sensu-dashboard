@@ -24,6 +24,7 @@ html(lang="en" ng-app="sensuApp")
     link(rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700")
     link(rel="stylesheet" type="text/css" href="css/app.css")
   body(ng-controller="MainController")
+    div
     .navbar.navbar-xs.show-xs.hidden-sm.hidden-md.hidden-lg(role="navigation")
       a(href="#").fa.fa-bars.fa-2x
       h3 Sensu Dashboard
@@ -32,45 +33,37 @@ html(lang="en" ng-app="sensuApp")
         div
           ul.nav.navbar-nav
             li#dashboard
-              a(href="#dashboard")
+              a(ui-sref="dashboard")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Dashboard")
                   i.fa.fa-tachometer
             li#events
-              a(href="#events")
+              a(ui-sref="events")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Events")
                   i.fa.fa-tasks
             li#clients
-              a(href="#clients")
+              a(ui-sref="clients")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Clients")
                   i.fa.fa-hdd-o
             li#stashes
-              a(href="#stashes")
+              a(ui-sref="stashes")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Stashes")
                   i.fa.fa-key
             li#checks
-              a(href="#checks")
+              a(ui-sref="checks")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Checks")
                   i.fa.fa-check-square
             li#info
-              a(href="#info")
+              a(ui-sref="info")
                 span.small-nav(data-toggle="tooltip" data-placement="right" title="Information")
                   i.fa.fa-info-circle
     #sidebar-spacer.hidden-xs
     #page-wrapper
-      .main-view(ng-view)
-      //- #initial-loading-indicator-container
-      //- i#initial-loading-indicator.icon-spinner.icon-spin
-    //- footer
-    //-   | &copy; Copyright
-    //-   a(href="http://www.sonian.com")
-    //-     | Sonian, Inc.
-    //-   | 2014
-    //-   a(href="https://github.com/sensu/sensu-dashboard/blob/master/MIT-LICENSE.txt") License (MIT)
+      .main-view(ui-view)
 
   script(src="js/vendor/jquery/jquery.js")
   script(src="js/vendor/bootstrap/bootstrap.js")
   script(src="js/vendor/angular/angular.js")
   script(src="js/vendor/angular-animate/angular-animate.js")
   script(src="js/vendor/angular-resource/angular-resource.js")
-  script(src="js/vendor/angular-route/angular-route.js")
+  script(src="js/vendor/angular-ui-router/angular-ui-router.js")
   script(src="js/app.js")

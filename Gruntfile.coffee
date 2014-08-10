@@ -32,7 +32,7 @@ module.exports = (grunt) ->
           "public/js/vendor/angular-resource/angular-resource.js": ["bower_components/angular-resource/angular-resource.js"]
       "angular-route":
         files:
-          "public/js/vendor/angular-route/angular-route.js": ["bower_components/angular-route/angular-route.js"]
+          "public/js/vendor/angular-ui-router/angular-ui-router.js": ["bower_components/angular-ui-router/release/angular-ui-router.js"]
       "bootstrap":
         files:
           "public/css/vendor/bootstrap/bootstrap.css": ["bower_components/bootstrap/dist/css/bootstrap.css"]
