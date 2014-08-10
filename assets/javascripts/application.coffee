@@ -15,18 +15,32 @@
       $httpProvider.defaults.useXDomain = true
       delete $httpProvider.defaults.headers.common['X-Requested-With']
 
-      $urlRouterProvider.otherwise("/dashboard")
+      $urlRouterProvider.otherwise("/")
 
       $stateProvider
+        .state "sensu",
+          url: "/"
+          views:
+            navbar:
+              templateUrl: "templates/navbar.html"
+
         .state "dashboard",
           url: "/dashboard"
-          templateUrl: "templates/dashboard/index.html"
-          controller: "DashboardController"
+          views:
+            navbar:
+              templateUrl: "templates/navbar.html"
+            content:
+              templateUrl: "templates/dashboard/index.html"
+              controller: "DashboardController"
 
         .state "events",
-          url: "/events"
-          templateUrl: "templates/events/index.html"
-          controller: "EventsController"
+          url: "^/events"
+          views:
+            navbar:
+              templateUrl: "templates/navbar.html"
+            content:
+              templateUrl: "templates/events/index.html"
+              controller: "EventsController"
 
         .state "clients",
           url: "/clients"

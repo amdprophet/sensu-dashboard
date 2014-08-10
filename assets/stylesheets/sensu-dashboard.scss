@@ -198,18 +198,10 @@ hr {
 
 $fade-time: 0.5s;
 
-.main-view {
-  float: none;
+#contentUI {
   overflow: hidden;
   width: 100%;
-
-  &.ng-leave {
-    @include animation(fadeOut, $fade-time)
-  }
-
-  &.ng-enter {
-    @include animation(fadeIn, $fade-time)
-  }
+  padding-left: 50px;
 }
 
 .container-fluid {
@@ -221,9 +213,9 @@ $fade-time: 0.5s;
 }
 
 #sidebar-spacer {
-  float: left;
+/*  float: left;
   width: 50px;
-  height: 150px;
+  height: 150px;*/
 }
 
 h1 {
@@ -314,4 +306,30 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2px 12px;
     display: block;
   }
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+[ui-view="content"].ng-enter {
+  opacity: 0;
+}
+
+[ui-view="content"].ng-enter-active {
+  opacity: 1;
+}
+
+[ui-view="content"].ng-leave {
+  opacity: 1;
+}
+
+[ui-view="content"].ng-leave-active {
+  opacity: 0;
 }
